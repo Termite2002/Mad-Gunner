@@ -8,6 +8,9 @@ public class PlayerBullet : MonoBehaviour
     public Rigidbody2D theRB;
 
     public GameObject impactEffect;
+    public GameObject hurtEnemyEffect;
+
+    public int damageToGive = 50;
     void Start()
     {
         
@@ -20,8 +23,17 @@ public class PlayerBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(impactEffect, transform.position, transform.rotation);
+        if (other.tag == "Environment")
+        {
+            Instantiate(impactEffect, transform.position, transform.rotation);
+        }
         Destroy(gameObject);
+
+        if (other.tag == "Enemy")
+        {
+            Instantiate(hurtEnemyEffect, transform.position, transform.rotation);
+            other.GetComponent<EnemyController>().DamageEnemy(damageToGive);
+        }
     }
     private void OnBecameInvisible()    
     {
