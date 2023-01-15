@@ -53,11 +53,16 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
-    <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
+    <Compile Include="Assets\Scripts\DamagePlayer.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\Scripts\Breakables.cs" />
+    <Compile Include="Assets\Scripts\BrokePieces.cs" />
+    <Compile Include="Assets\Scripts\SpriteSortOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -9,6 +9,9 @@ public class PlayerHealthController : MonoBehaviour
     public int currentHealth;
     public int maxHealth;
 
+    public float damageInvincLength = 1f;
+    public float invincCount;
+
     private void Awake()
     {
         instance = this;
@@ -16,20 +19,47 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        UIController.instance.healthSlider.maxValue = maxHealth;
+        UIController.instance.healthSlider.value = currentHealth;
+        UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (invincCount > 0)
+        {
+            invincCount -= Time.deltaTime;
+
+            if (invincCount <= 0)
+            {
+                PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.b, PlayerController.instance.bodySR.color.g, 1f);
+            }
+        }
     }
     public void DamagePlayer()
     {
-        currentHealth--;
-
-        if (currentHealth <= 0)
+        if (invincCount <= 0)
         {
-            PlayerController.instance.gameObject.SetActive(false);
+            currentHealth--;
+
+            invincCount = damageInvincLength;
+            PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.b, PlayerController.instance.bodySR.color.g, 0.5f);
+
+            if (currentHealth <= 0)
+            {
+                PlayerController.instance.gameObject.SetActive(false);
+                UIController.instance.deathScreen.SetActive(true);
+            }
+
+            UIController.instance.healthSlider.value = currentHealth;
+            UIController.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
         }
+    }
+    public void MakeInvincible(float length)
+    {
+        invincCount = length;
+        PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.b, PlayerController.instance.bodySR.color.g, 0.5f);
     }
 }
