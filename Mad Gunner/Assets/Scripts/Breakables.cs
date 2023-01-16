@@ -6,6 +6,10 @@ public class Breakables : MonoBehaviour
 {
     public GameObject[] brokenPiecies;
     public int maxPieces = 5;
+
+    public bool shouldDropItem;
+    public GameObject[] itemsToDrop;
+    public float itemDropPercent;
     void Start()
     {
         
@@ -24,12 +28,25 @@ public class Breakables : MonoBehaviour
             {
                 Destroy(gameObject);
 
+                // broken pieces
                 int piecesToDrop = Random.Range(0, maxPieces);
 
                 for (int i = 1; i <= piecesToDrop; i++)
                 {
                     int randomPiece = Random.Range(0, brokenPiecies.Length);
                     Instantiate(brokenPiecies[randomPiece], transform.position, transform.rotation);
+                }
+
+                // drop items
+                if (shouldDropItem)
+                {
+                    float dropChance = Random.Range(0f, 100f);
+
+                    if (dropChance < itemDropPercent)
+                    {
+                        int randomItem = Random.Range(0, itemsToDrop.Length);
+                        Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                    }
                 }
             }
               
