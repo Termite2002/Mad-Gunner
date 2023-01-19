@@ -58,6 +58,7 @@ public class EnemyController : MonoBehaviour
                 {
                     fireCounter = fireRate;
                     Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    AudioManager.instance.PlaySFX(13);
                 }
             }
         }else
@@ -78,10 +79,14 @@ public class EnemyController : MonoBehaviour
     public void DamageEnemy(int damage)
     {
         health -= damage;
+        AudioManager.instance.PlaySFX(2);
+
         Instantiate(hitEffect, transform.position, transform.rotation);
         if (health <= 0)
         {
             Destroy(gameObject);
+
+            AudioManager.instance.PlaySFX(1);
 
             int selectedSplatter = Random.Range(0, deathSplatter.Length);
 

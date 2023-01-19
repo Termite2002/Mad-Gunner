@@ -29,6 +29,8 @@ public class PlayerBullet : MonoBehaviour
         }
         Destroy(gameObject);
 
+        AudioManager.instance.PlaySFX(4);
+
         if (other.tag == "Enemy")
         {
             Instantiate(hurtEnemyEffect, transform.position, transform.rotation);

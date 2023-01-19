@@ -10,6 +10,7 @@ public class Breakables : MonoBehaviour
     public bool shouldDropItem;
     public GameObject[] itemsToDrop;
     public float itemDropPercent;
+
     void Start()
     {
         
@@ -20,36 +21,48 @@ public class Breakables : MonoBehaviour
     {
         
     }
+
+    public void Smash()
+    {
+        
+            Destroy(gameObject);
+
+            AudioManager.instance.PlaySFX(0);
+
+            // broken pieces
+            int piecesToDrop = Random.Range(0, maxPieces);
+
+            for (int i = 1; i <= piecesToDrop; i++)
+            {
+                int randomPiece = Random.Range(0, brokenPiecies.Length);
+                Instantiate(brokenPiecies[randomPiece], transform.position, transform.rotation);
+            }
+
+            // drop items
+            if (shouldDropItem)
+            {
+                float dropChance = Random.Range(0f, 100f);
+
+                if (dropChance < itemDropPercent)
+                {
+                    int randomItem = Random.Range(0, itemsToDrop.Length);
+                    Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                }
+            }
+        
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             if (PlayerController.instance.dashCounter > 0)
             {
-                Destroy(gameObject);
-
-                // broken pieces
-                int piecesToDrop = Random.Range(0, maxPieces);
-
-                for (int i = 1; i <= piecesToDrop; i++)
-                {
-                    int randomPiece = Random.Range(0, brokenPiecies.Length);
-                    Instantiate(brokenPiecies[randomPiece], transform.position, transform.rotation);
-                }
-
-                // drop items
-                if (shouldDropItem)
-                {
-                    float dropChance = Random.Range(0f, 100f);
-
-                    if (dropChance < itemDropPercent)
-                    {
-                        int randomItem = Random.Range(0, itemsToDrop.Length);
-                        Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
-                    }
-                }
+                Smash();
             }
-              
+        }
+        if (other.tag == "PlayerBullet")
+        {
+            Smash();
         }
     }
 }

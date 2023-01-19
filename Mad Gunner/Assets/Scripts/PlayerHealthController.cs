@@ -44,6 +44,8 @@ public class PlayerHealthController : MonoBehaviour
         {
             currentHealth--;
 
+            AudioManager.instance.PlaySFX(11);
+
             invincCount = damageInvincLength;
             PlayerController.instance.bodySR.color = new Color(PlayerController.instance.bodySR.color.r, PlayerController.instance.bodySR.color.b, PlayerController.instance.bodySR.color.g, 0.5f);
 
@@ -51,6 +53,9 @@ public class PlayerHealthController : MonoBehaviour
             {
                 PlayerController.instance.gameObject.SetActive(false);
                 UIController.instance.deathScreen.SetActive(true);
+
+                AudioManager.instance.PlayGameOver();
+                AudioManager.instance.PlaySFX(9);
             }
 
             UIController.instance.healthSlider.value = currentHealth;
