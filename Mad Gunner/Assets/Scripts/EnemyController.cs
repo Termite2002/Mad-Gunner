@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
                 moveDirection = Vector3.zero;
             }
             moveDirection.Normalize();
-            Debug.Log(PlayerController.instance.transform.position - transform.position);
+ //           Debug.Log(PlayerController.instance.transform.position - transform.position);
             theRB.velocity = moveDirection * moveSpeed;
 
 
