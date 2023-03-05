@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         //    Debug.Log(transform.position + "   :-:   " + transform.localPosition);
 
-        if (canMove)
+        if (canMove && !LevelManager.instance.isPaused)
         {
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");

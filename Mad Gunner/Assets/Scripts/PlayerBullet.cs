@@ -11,12 +11,7 @@ public class PlayerBullet : MonoBehaviour
     public GameObject hurtEnemyEffect;
 
     public int damageToGive = 50;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         theRB.velocity = transform.right * speed;
