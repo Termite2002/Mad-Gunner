@@ -26,13 +26,7 @@ public class EnemyController : MonoBehaviour
     public float shootRange;
 
     public SpriteRenderer theBody;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (theBody.isVisible && PlayerController.instance.gameObject.activeInHierarchy)

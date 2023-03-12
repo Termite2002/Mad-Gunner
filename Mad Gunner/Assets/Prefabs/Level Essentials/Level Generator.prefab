@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3080328295468735045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3080328295468735046}
+  m_Layer: 0
+  m_Name: Generation Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3080328295468735046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080328295468735045}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3080328296458054801}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3080328296458054807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3080328296458054801}
+  - component: {fileID: 3080328296458054800}
+  m_Layer: 0
+  m_Name: Level Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3080328296458054801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080328296458054807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3080328295468735046}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3080328296458054800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080328296458054807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed519c3de15ed14f90c895a0f88b971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layoutRoom: {fileID: 6742289067924278317, guid: ed9367be09365514aa5bcce6f21f9a47, type: 3}
+  startColor: {r: 0, g: 0.98998857, b: 1, a: 1}
+  endColor: {r: 1, g: 0, b: 0, a: 1}
+  distanceToEnd: 10
+  generatorPoint: {fileID: 3080328295468735046}
+  selectedDirection: 0
+  xOffset: 18
+  yOffset: 10
+  whatIsRoom:
+    serializedVersion: 2
+    m_Bits: 32768
+  endRoom: {fileID: 0}
+  rooms:
+    singleUp: {fileID: 7753896776084199554, guid: 1fa75b96896319f4fbb7f224a627ef73, type: 3}
+    singleDown: {fileID: 4333614816306660771, guid: 08f9675db0a356344ada8e62c6a980d8, type: 3}
+    singleLeft: {fileID: 4777261840363271266, guid: 786d3910b2fdc8e46a7fe8f7c1b9bb29, type: 3}
+    singleRight: {fileID: 3791801601161562544, guid: ee0e1b7624cb66246bc6e601d9fbe13e, type: 3}
+    doubleLeftRight: {fileID: 7635906249705617563, guid: e6bfe5f82d9d9f345b22b0d418020cd4, type: 3}
+    doubleUpDown: {fileID: 3840245080271526817, guid: 9df44e69687a53a47847baa5b097588d, type: 3}
+    doubleUpRight: {fileID: 2873925290123103577, guid: 6d943610d627ca147ab5435cd99b108b, type: 3}
+    doubleDownRight: {fileID: 2628566775968644618, guid: e46bf560963a53045804f03a811b88cd, type: 3}
+    doubleLeftDown: {fileID: 5718792675357498863, guid: ec6f7d5a80e3fbb42a6f8d7f292abf5e, type: 3}
+    doubleLeftUp: {fileID: 6225596569451198985, guid: cd32bb5f7c5f734419b5989837085a3f, type: 3}
+    tripleUpDownLeft: {fileID: 2700175081892276757, guid: d9e3bcc92c0db8a49a8fc2a86dbe7ac1, type: 3}
+    tripleLeftDownRight: {fileID: 6336200658793985454, guid: 9f900282a38c9594ba75aa9e2587bd9a, type: 3}
+    tripleUpDownRight: {fileID: 8217803142171759813, guid: 078833c15afa2ac45bd9001b85108966, type: 3}
+    tripleLeftUpRight: {fileID: 6585108184342305561, guid: 590eb2c3e05823c4298580f29b0d017d, type: 3}
+    fourway: {fileID: 8262012343535245212, guid: 5fac2c60241fb7e4f9d2237adae380f9, type: 3}
+  centerStart: {fileID: 8387884551732185573, guid: adae766d21f735a44822446e51a72f91, type: 3}
+  centerEnd: {fileID: 2494279089469237937, guid: b946c4fa7bc15f7488c44ac2e1304fc1, type: 3}
+  potentialCenters:
+  - {fileID: 2423696582408227291, guid: 68f25931c0dd8c541af4b39d2413dd6d, type: 3}
+  - {fileID: 8387884551732185573, guid: adae766d21f735a44822446e51a72f91, type: 3}

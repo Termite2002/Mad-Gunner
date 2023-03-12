@@ -12,12 +12,9 @@ public class EnemyBullet : MonoBehaviour
         direction = PlayerController.instance.transform.position - transform.position;
         direction.Normalize();
     }
-
-    // Update is called once per frame
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
-        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
