@@ -177,7 +177,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 5319111943089217275}
   moveSpeed: 3
+  shouldChasePlayer: 1
   rangeToChasePlayer: 7
+  shouldRunAway: 0
+  runawayRange: 0
+  shouldWander: 0
+  wanderLength: 0
+  pauseLength: 0
+  shouldPatrol: 0
+  patrolPoints: []
+  shouldFire: 1
+  bullet: {fileID: 2246069445372976786, guid: d8bc57f3883dcdc4784b477df633b853, type: 3}
+  firePoint: {fileID: 5293513656575300460}
+  fireRate: 0.5
+  shootRange: 10
+  theBody: {fileID: 5319111941478024002}
   anim: {fileID: 5319111941478024029}
   health: 150
   deathSplatter:
@@ -186,12 +200,10 @@ MonoBehaviour:
   - {fileID: 9146301699306117875, guid: 2a7eb345a41251c4e99639a0a62ca9a4, type: 3}
   - {fileID: 1549959418681022030, guid: 0f0640ad87153764891b7b500c747ccd, type: 3}
   hitEffect: {fileID: 2140963653165234320, guid: 4e9f80345f3aa4445a4dea209abbaed9, type: 3}
-  shouldFire: 1
-  bullet: {fileID: 2246069445372976786, guid: d8bc57f3883dcdc4784b477df633b853, type: 3}
-  firePoint: {fileID: 5293513656575300460}
-  fireRate: 0.5
-  shootRange: 10
-  theBody: {fileID: 5319111941478024002}
+  shouldDropItem: 1
+  itemsToDrop:
+  - {fileID: 3500543770576510365, guid: 30b6f5d61f52a7445aeedb656cf34141, type: 3}
+  itemDropPercent: 25
 --- !u!50 &5319111943089217275
 Rigidbody2D:
   serializedVersion: 4

@@ -7,15 +7,29 @@ public class EnemyController : MonoBehaviour
     public Rigidbody2D theRB;
     public float moveSpeed;
 
+    [Header("Chase Player")]
+    public bool shouldChasePlayer;
     public float rangeToChasePlayer;
     private Vector3 moveDirection;
-    public Animator anim;
 
-    public int health = 150;
 
-    public GameObject[] deathSplatter;
-    public GameObject hitEffect;
+    [Header("Run Away")]
+    public bool shouldRunAway;
+    public float runawayRange;
 
+    [Header("Wandering")]
+    public bool shouldWander;
+    public float wanderLength, pauseLength;
+    private float wanderCounter, pauseCounter;
+    private Vector3 wanderDirection;
+
+    [Header("Patrolling")]
+    public bool shouldPatrol;
+    public Transform[] patrolPoints;
+    private int currentPatrolPoint;
+
+
+    [Header("Shooting")]
     public bool shouldFire;
 
     public GameObject bullet;
@@ -25,22 +39,91 @@ public class EnemyController : MonoBehaviour
     private float fireCounter;
     public float shootRange;
 
+    [Header("Variables")]
     public SpriteRenderer theBody;
+    public Animator anim;
 
+    public int health = 150;
+
+    public GameObject[] deathSplatter;
+    public GameObject hitEffect;
+
+    public bool shouldDropItem;
+    public GameObject[] itemsToDrop;
+    public float itemDropPercent;
+    private void Start()
+    {
+        if (shouldWander)
+        {
+            pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+        }
+    }
     void Update()
     {
         if (theBody.isVisible && PlayerController.instance.gameObject.activeInHierarchy)
         {
-            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToChasePlayer)
+            moveDirection = Vector3.zero;
+
+            if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) < rangeToChasePlayer && shouldChasePlayer)
             {
                 moveDirection = PlayerController.instance.transform.position - transform.position;
             }
             else
             {
-                moveDirection = Vector3.zero;
+                if (shouldWander)
+                {
+                    if (wanderCounter > 0)
+                    {
+                        wanderCounter -= Time.deltaTime;
+
+                        moveDirection = wanderDirection;
+
+                        if (wanderCounter <= 0)
+                        {
+                            pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+                        }
+                    }
+
+                    if (pauseCounter > 0)
+                    {
+                        pauseCounter -= Time.deltaTime;
+
+                        if (pauseCounter <= 0)
+                        {
+                            wanderCounter = Random.Range(wanderLength * 0.75f, wanderLength * 1.25f);
+
+                            wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                        }
+                    }
+                }
+                if (shouldPatrol)
+                {
+                    moveDirection = patrolPoints[currentPatrolPoint].position - transform.position;
+
+                    if (Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position) < 0.2f)
+                    {
+                        currentPatrolPoint++;
+                        if (currentPatrolPoint >= patrolPoints.Length)
+                        {
+                            currentPatrolPoint = 0;
+                        }
+                    }
+                }
             }
+
+            if (shouldRunAway && Vector3.Distance(transform.position, PlayerController.instance.transform.position) < runawayRange)
+            {
+                moveDirection = transform.position - PlayerController.instance.transform.position;
+            }
+            //else
+            //{
+            //    moveDirection = Vector3.zero;
+            //}
+
             moveDirection.Normalize();
- //           Debug.Log(PlayerController.instance.transform.position - transform.position);
+
+
+
             theRB.velocity = moveDirection * moveSpeed;
 
 
@@ -87,6 +170,18 @@ public class EnemyController : MonoBehaviour
             int rotation = Random.Range(0, 4);
 
             Instantiate(deathSplatter[selectedSplatter], transform.position, Quaternion.Euler(0f, 0f, rotation * 90f));
+
+            // drop items
+            if (shouldDropItem)
+            {
+                float dropChance = Random.Range(0f, 100f);
+
+                if (dropChance < itemDropPercent)
+                {
+                    int randomItem = Random.Range(0, itemsToDrop.Length);
+                    Instantiate(itemsToDrop[randomItem], transform.position, transform.rotation);
+                }
+            }
         }
     }
 }

@@ -135,6 +135,8 @@ MonoBehaviour:
   itemsToDrop:
   - {fileID: 6284414786919913010, guid: a6d0240fb36810142b49c4bad6f6bfdf, type: 3}
   - {fileID: 845883669842368498, guid: 62ad3fa9c6ed2054e99645e647dba143, type: 3}
+  - {fileID: 3500543770576510365, guid: 30b6f5d61f52a7445aeedb656cf34141, type: 3}
+  - {fileID: 3500543770576510365, guid: 30b6f5d61f52a7445aeedb656cf34141, type: 3}
   itemDropPercent: 25
 --- !u!114 &5346232762191234522
 MonoBehaviour:
