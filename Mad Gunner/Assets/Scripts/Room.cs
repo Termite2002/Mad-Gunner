@@ -12,10 +12,8 @@ public class Room : MonoBehaviour
 
     [HideInInspector]
     public bool roomActive;
-    void Start()
-    {
-        
-    }
+
+    public GameObject mapHider;
 
     // Update is called once per frame
     void Update()
@@ -63,6 +61,8 @@ public class Room : MonoBehaviour
             }
 
             roomActive = true;
+
+            mapHider.SetActive(false);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
