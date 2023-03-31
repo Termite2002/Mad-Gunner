@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopItem : MonoBehaviour
 {
@@ -14,6 +15,22 @@ public class ShopItem : MonoBehaviour
 
     public int healthUpgradeAmount;
 
+    public Gun[] potentialGuns;
+    private Gun theGun;
+    public SpriteRenderer gunSprite;
+    public Text infoText;
+    private void Start()
+    {
+        if (isWeapon)
+        {
+            int selectedGun = Random.Range(0, potentialGuns.Length);
+            theGun = potentialGuns[selectedGun];
+
+            gunSprite.sprite = theGun.gunShopSprite;
+            infoText.text = theGun.weaponName + "\n - " + theGun.itemCost.ToString() + " Gold - ";
+            itemCost = theGun.itemCost;
+        }
+    }
     private void Update()
     {
         if (inBuyZone)
@@ -32,7 +49,18 @@ public class ShopItem : MonoBehaviour
                     {
                         PlayerHealthController.instance.IncreaseMaxHealth(healthUpgradeAmount);
                     }
+                    if (isWeapon)
+                    {
+                        Gun gunClone = Instantiate(theGun);
+                        gunClone.transform.parent = PlayerController.instance.gunArm;
+                        gunClone.transform.position = PlayerController.instance.gunArm.position;
+                        gunClone.transform.localRotation = Quaternion.Euler(Vector3.zero);
+                        gunClone.transform.localScale = Vector3.one;
 
+                        PlayerController.instance.availableGuns.Add(gunClone);
+                        PlayerController.instance.currentGun = PlayerController.instance.availableGuns.Count - 1;
+                        PlayerController.instance.SwitchGun();
+                    }
 
                     gameObject.SetActive(false);
                     inBuyZone = false;
