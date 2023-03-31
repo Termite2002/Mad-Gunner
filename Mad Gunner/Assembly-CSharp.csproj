@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerHealthController.cs" />
     <Compile Include="Assets\Scripts\SpriteSortOrder.cs" />
+    <Compile Include="Assets\Scripts\GunPickup.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
@@ -74,10 +75,10 @@
     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
     <Compile Include="Assets\Scripts\RoomCenter.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\GunChest.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\GunPickup.cs" />
-    <Compile Include="Assets\Scripts\GunChest.cs" />
+    <Compile Include="Assets\Scripts\CharacterTracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

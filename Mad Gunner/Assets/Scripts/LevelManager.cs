@@ -14,12 +14,19 @@ public class LevelManager : MonoBehaviour
     public bool isPaused;
 
     public int currentCoins;
+
+    public Transform startPoint;
     private void Awake()
     {
         instance = this;
     }
     void Start()
     {
+        PlayerController.instance.transform.position = startPoint.position;
+        PlayerController.instance.canMove = true;
+
+        currentCoins = CharacterTracker.instance.currentCoins;
+
         Time.timeScale = 1f;
         
         UIController.instance.coinText.text = currentCoins.ToString();
@@ -42,6 +49,11 @@ public class LevelManager : MonoBehaviour
         UIController.instance.StartFadeToBlack(); 
 
         yield return new WaitForSeconds(waitToLoad);
+
+        CharacterTracker.instance.currentCoins = currentCoins;
+        CharacterTracker.instance.currentHealth = PlayerHealthController.instance.currentHealth;
+        CharacterTracker.instance.maxHealth = PlayerHealthController.instance.maxHealth;
+
         SceneManager.LoadScene(nextLevel);
     }
     public void PauseUnpause()
