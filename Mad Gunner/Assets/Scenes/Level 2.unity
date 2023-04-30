@@ -795,6 +795,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7486679325779610813, guid: c4715a25afaa6b640ae5993adef3fdb2, type: 3}
+      propertyPath: newGameScene
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7486679326121850912, guid: c4715a25afaa6b640ae5993adef3fdb2, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

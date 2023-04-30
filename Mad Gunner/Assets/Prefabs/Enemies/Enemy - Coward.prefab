@@ -180,20 +180,20 @@ MonoBehaviour:
   shouldChasePlayer: 0
   rangeToChasePlayer: 5
   shouldRunAway: 1
-  runawayRange: 3
+  runawayRange: 8
   shouldWander: 0
   wanderLength: 0
   pauseLength: 0
   shouldPatrol: 0
   patrolPoints: []
   shouldFire: 1
-  bullet: {fileID: 2246069445372976786, guid: d8bc57f3883dcdc4784b477df633b853, type: 3}
+  bullet: {fileID: 3210914275379309427, guid: 8bd6144db140bf148926c62c844698a8, type: 3}
   firePoint: {fileID: 897288344783324078}
-  fireRate: 0.5
-  shootRange: 5
+  fireRate: 0.25
+  shootRange: 15
   theBody: {fileID: 924592796854588288}
   anim: {fileID: 924592796854588319}
-  health: 150
+  health: 160
   deathSplatter:
   - {fileID: 3227962369692067506, guid: 1b45a863612053143818c70c677bdb96, type: 3}
   - {fileID: 4720091011724298600, guid: 6607cc179525ca341bc5690a4e784db0, type: 3}

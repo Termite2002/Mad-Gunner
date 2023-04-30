@@ -212,6 +212,9 @@ MonoBehaviour:
   openWhenEnemiesCleared: 1
   enemies:
   - {fileID: 8370372343348641788}
+  - {fileID: 3500342935607089137}
+  - {fileID: 3327627152778714670}
+  - {fileID: 8046646079575131814}
   theRoom: {fileID: 0}
 --- !u!1 &4033460849052447144
 GameObject:
@@ -2020,6 +2023,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8370372343348641786}
+  - {fileID: 3500342935607089143}
+  - {fileID: 3327627152778714664}
+  - {fileID: 8046646079575131808}
   m_Father: {fileID: 5079400580770814078}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2133,6 +2139,207 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6875, y: 2}
   m_EdgeRadius: 0
+--- !u!1001 &2520550158169411602
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8645153258042802142}
+    m_Modifications:
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.1352086
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3058548
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_Name
+      value: Enemy - Coward (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+--- !u!1 &3327627152778714670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 2520550158169411602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3327627152778714664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 2520550158169411602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4343553730588137933
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8645153258042802142}
+    m_Modifications:
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.0104966
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.2149553
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_Name
+      value: Enemy - Coward
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+--- !u!1 &3500342935607089137 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 4343553730588137933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3500342935607089143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 4343553730588137933}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7169657736550041754
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8645153258042802142}
+    m_Modifications:
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.4341345
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.337033
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+      propertyPath: m_Name
+      value: Enemy - Coward (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+--- !u!1 &8046646079575131814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 924592798465773116, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 7169657736550041754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8046646079575131808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 924592798465773114, guid: 6a59ee185c7474342b3a4b5152ee940e, type: 3}
+  m_PrefabInstance: {fileID: 7169657736550041754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8718222362562228672
 PrefabInstance:
   m_ObjectHideFlags: 0

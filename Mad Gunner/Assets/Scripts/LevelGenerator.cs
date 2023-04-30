@@ -128,7 +128,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
 
-            if (includeShop)
+            if (includeGunRoom)
             {
                 if (outline.transform.position == gunRoom.transform.position)
                 {
@@ -147,11 +147,7 @@ public class LevelGenerator : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     public void MoveGenerationPoint()
     {
         switch(selectedDirection)

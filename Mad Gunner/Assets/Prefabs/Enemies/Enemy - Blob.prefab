@@ -107,7 +107,7 @@ MonoBehaviour:
   theRB: {fileID: 2429058397406574026}
   moveSpeed: 3.5
   shouldChasePlayer: 1
-  rangeToChasePlayer: 7
+  rangeToChasePlayer: 10
   shouldRunAway: 0
   runawayRange: 0
   shouldWander: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
   shootRange: 10
   theBody: {fileID: 2429058397942966387}
   anim: {fileID: 2429058397942966380}
-  health: 150
+  health: 250
   deathSplatter:
   - {fileID: 3227962369692067506, guid: 1b45a863612053143818c70c677bdb96, type: 3}
   - {fileID: 4720091011724298600, guid: 6607cc179525ca341bc5690a4e784db0, type: 3}

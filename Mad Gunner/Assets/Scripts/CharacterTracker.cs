@@ -12,14 +12,5 @@ public class CharacterTracker : MonoBehaviour
     {
         instance = this;        
     }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
