@@ -579,6 +579,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3080328296458054800, guid: 2767f0c4d26ded240b9b93abd293c83c, type: 3}
+      propertyPath: centerEnd
+      value: 
+      objectReference: {fileID: 7948153747375601056, guid: d55abac36ce06d54a99e2693d5856517, type: 3}
+    - target: {fileID: 3080328296458054800, guid: 2767f0c4d26ded240b9b93abd293c83c, type: 3}
       propertyPath: centerShop
       value: 
       objectReference: {fileID: 5896995816977814791, guid: 7e2c3973355b2c54d90342941e88e2f0, type: 3}

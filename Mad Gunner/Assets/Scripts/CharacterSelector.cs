@@ -10,6 +10,28 @@ public class CharacterSelector : MonoBehaviour
 
     public PlayerController playerToSpawn;
 
+    public bool doesNotUnlock;
+    private void Start()
+    {
+        if (doesNotUnlock)
+        {
+            if (PlayerPrefs.HasKey(playerToSpawn.name))
+            {
+                if (PlayerPrefs.GetInt(playerToSpawn.name) == 1)
+                {
+                    gameObject.SetActive(true);
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
     void Update()
     {
         if (canSelect)

@@ -53,6 +53,7 @@
     <UnityVersion>2020.3.23f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CharacterSelectManager.cs" />
     <Compile Include="Assets\Scripts\LevelExit.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Assets\Scripts\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\CharacterSelector.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerBullet.cs" />
     <Compile Include="Assets\Scripts\ShopItem.cs" />
@@ -79,8 +81,7 @@
     <Compile Include="Assets\Scripts\GunChest.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
-    <Compile Include="Assets\Scripts\CharacterSelector.cs" />
-    <Compile Include="Assets\Scripts\CharacterSelectManager.cs" />
+    <Compile Include="Assets\Scripts\CharacterUnlockCage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
