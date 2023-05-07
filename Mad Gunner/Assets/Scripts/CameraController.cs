@@ -14,9 +14,18 @@ public class CameraController : MonoBehaviour
 
     private bool bigMapActive;
 
+    public bool isBossRoom;
+
     private void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        if (isBossRoom)
+        {
+            target = PlayerController.instance.transform;
+        }
     }
     void Update()
     {
@@ -25,7 +34,7 @@ public class CameraController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, target.position.y, transform.position.z), moveSpeed * Time.deltaTime);
         }
 
-        if (Input.GetKeyDown(KeyCode.M))
+        if (Input.GetKeyDown(KeyCode.M) && !isBossRoom)
         {
             if (!bigMapActive)
             {

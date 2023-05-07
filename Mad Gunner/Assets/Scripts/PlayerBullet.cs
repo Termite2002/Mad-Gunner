@@ -31,6 +31,13 @@ public class PlayerBullet : MonoBehaviour
             Instantiate(hurtEnemyEffect, transform.position, transform.rotation);
             other.GetComponent<EnemyController>().DamageEnemy(damageToGive);
         }
+
+        if (other.CompareTag("Boss"))
+        {
+            BossController.instance.TakeDamage(damageToGive);
+
+            Instantiate(BossController.instance.hitEffect, transform.position, transform.rotation);
+        }
     }
     private void OnBecameInvisible()    
     {
